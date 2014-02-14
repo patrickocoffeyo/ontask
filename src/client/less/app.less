@@ -7,16 +7,47 @@
    ========================================================================== */
 body { }
 
+h1 { color: @brand-primary-dark; }
+
 
 /* =============================================================================
    Header
    ========================================================================== */
+.page-header {
+  text-align: center;
+  margin-top: 0;
+  padding: 10px;
+  background: @brand-primary;
+  overflow: hidden;
+  .title {
+    display: inline-block;
+    h1 {
+      font-size: 24px;
+      display: block;
+      margin: 0; padding: 0;
+    }
+    small {
+      font-size: 18px;
+      font-weight: 200;
+      color: #fff;
+      display: block;
+      margin-left: 10px;
+    }
+  }
+
+  button {
+    color: #fff;
+    background-color: #15987e;
+    border-color: #0f705d;
+    margin-top: 8px;
+    i { pointer-events: none; }
+  }
+}
 
 
 /* ==========================================================================
    Content
    ========================================================================== */
-#main {margin-top: 20px;}
 
 
 /* ==========================================================================
@@ -31,7 +62,8 @@ body { }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm) {}
+@media (min-width: @screen-sm) {
+}
 
 @media (min-width: @screen-md) {}
 

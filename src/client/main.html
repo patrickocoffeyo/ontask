@@ -1,11 +1,21 @@
 <head>
-  <title>OnTask</title>
+  <title>On Task</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
+<template name="header">
+  <header id="header" class="page-header">
+    <button class="btn btn-primary prev pull-left"><i class="fa fa-arrow-left"></i></button>
+    <div class="title"><h1>On Task</h1><small>{{date}}</small></div>
+    <button class="btn btn-primary next pull-right"><i class="fa fa-arrow-right"></i></button>
+  </header>
+</template>
+
 <template name="layoutMain">
   <body>
+    {{>header}}
     <section class="container" id="main">
+      {{>flashMessages}}
       {{yield}}
     </section>
   </body>
