@@ -24,7 +24,6 @@ h1 { color: @brand-primary-dark; }
   margin-top: 0;
   padding: 10px;
   background: @brand-primary;
-  overflow: hidden;
   .title {
     display: inline-block;
     h1 {
@@ -41,13 +40,27 @@ h1 { color: @brand-primary-dark; }
     }
   }
 
-  button {
+  button.prev, button.next {
     color: #fff;
     padding: 5px 10px;
     background-color: #15987e;
     border-color: #0f705d;
     margin-top: 6px;
     i { pointer-events: none; }
+  }
+
+  #login-dropdown-list {
+    list-style: none;
+    background-color: @brand-primary-dark;
+    position: absolute;
+    right: 0; top: 0;
+    display: block;
+    line-height: 47px;
+    padding: 0 16px;
+
+    a.dropdown-toggle {
+      color: #fff;
+    }
   }
 }
 
