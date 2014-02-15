@@ -1,10 +1,14 @@
 channel = undefined
-
 Session.setDefault 'viewDate', new Date()
+
 Router.map ->
-  this.route 'home',
+  this.route 'dashboard',
     path: '/'
     template: 'dashboard'
+    waitOn: channel = Meteor.subscribe 'tasks-day', Session.get 'viewDate'
+    unload: do channel.stop
+    data:
+      tasks: -> Tasks.find()
 
 Template.header.date = -> moment(Session.get 'viewDate').format('MMMM DD, YYYY')
 Template.header.events

@@ -9,6 +9,12 @@ body { }
 
 h1 { color: @brand-primary-dark; }
 
+.form-control, button.btn, a.btn {
+  border-radius: 0!important;
+  padding: 20px 40px;
+  height: auto;
+  font-size: 150%;
+}
 
 /* =============================================================================
    Header
@@ -37,11 +43,31 @@ h1 { color: @brand-primary-dark; }
 
   button {
     color: #fff;
+    padding: 5px 10px;
     background-color: #15987e;
     border-color: #0f705d;
-    margin-top: 8px;
+    margin-top: 6px;
     i { pointer-events: none; }
   }
+}
+
+#nav-main {
+  &.nav-justified {
+    width: 100%;
+    & > li {
+      display: table-cell!important;
+      width: 1%!important;
+      float: none;
+
+      a.active, a:hover, a:focus {
+        color: #fff;
+        background: @brand-primary;
+      }
+    }
+  }
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid @gray-lighter;
 }
 
 
@@ -53,6 +79,18 @@ h1 { color: @brand-primary-dark; }
 /* ==========================================================================
    Templates
    ========================================================================== */
+#task-form {
+  input, select  {
+    width: 100%;
+    .box-sizing(border-box);
+    margin-bottom: 10px;
+  }
+  .btn-group {
+    width: 100%;
+    button { width: 50%; }
+  }
+  
+}
 
 /* ==========================================================================
    Footer

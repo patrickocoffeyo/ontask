@@ -11,10 +11,20 @@
   </header>
 </template>
 
+<template name="navigation">
+  <ul class="nav nav-pills nav-justified" id="nav-main">
+    <li><a href="{{pathFor 'dashboard'}}" class="task-list {{activeIf 'dashboard'}}"><i class="fa fa-list"></i> Tasks</a></li>
+    <li><a href="{{pathFor 'addTask'}}" class="add-task {{activeIf 'addTask'}}"><i class="fa fa-plus"></i> Add</a></li>
+    <li><a href="#" class="view-calendar {{activeIf 'viewCalendar'}}"><i class="fa fa-calendar"></i> Calendar</a></li>
+    <li><a href="#" class="view-account {{activeIf 'viewAccount'}}"><i class="fa fa-user"></i> Account</a></li>
+  </ul>
+</template>
+
 <template name="layoutMain">
   <body>
     {{>header}}
     <section class="container" id="main">
+      {{>navigation}}
       {{>flashMessages}}
       {{yield}}
     </section>

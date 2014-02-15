@@ -9,3 +9,6 @@ this.Tasks = new Meteor.Collection2 'tasks',
     delta:
       type: Number
       label: "Delta"
+  transform: (task)->
+    task.dateFormatted = moment(task.date).format('MMMM DD, YYYY')
+    return task
