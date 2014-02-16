@@ -1,10 +1,26 @@
 <head>
   <title>On Task</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Load google fonts in script. meteor.com bug -->
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: [ 'Raleway:400,300,700,200,100' ] }
+    };
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+  </script>
 </head>
 
 <template name="header">
-  <header id="header" class="page-header">
+  <header id="header" class="page-header {{#if isLoggedIn}}authenticated{{else}}anonymous{{/if}}">
     {{#if isLoggedIn}}
       <button class="btn btn-primary prev pull-left"><i class="fa fa-arrow-left"></i></button>
 
@@ -26,7 +42,7 @@
     <ul class="nav nav-pills nav-justified" id="nav-main">
       <li><a href="{{pathFor 'dashboard'}}" class="task-list {{activeIf 'dashboard'}}"><i class="fa fa-list"></i> Tasks</a></li>
       <li><a href="{{pathFor 'addTask'}}" class="add-task {{activeIf 'addTask'}}"><i class="fa fa-plus"></i> Add</a></li>
-      <li><a href="#" class="view-account {{activeIf 'viewAccount'}}"><i class="fa fa-user"></i> Account</a></li>
+      <li><a href="{{pathFor 'account'}}" class="view-account {{activeIf 'account'}}"><i class="fa fa-user"></i> Account</a></li>
     </ul>
   {{/if}}
 </template>

@@ -13,6 +13,4 @@ Meteor.publish 'tasks-day', (date)->
 
   start.setHours 23,59,59,999
   end.setHours 0,0,1,0
-  console.log start.toISOString(), end.toISOString()
-  console.log start, end
   Tasks.find { user: this.userId, date: { $gte: start, $lt: end } }

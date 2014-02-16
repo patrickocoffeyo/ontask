@@ -1,0 +1,23 @@
+<template name="account">
+  <button class="btn btn-success logout btn-block"><i class="fa fa-power-off"></i> Logout</button>
+  <button class="btn btn-danger btn-block" data-toggle="modal" data-target="#cancelAccount"><i class="fa fa-trash-o"></i> Delete Account</button>
+
+  <div class="modal fade" id="cancelAccount">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Whoa now! Hold up...</h4>
+        </div>
+        <div class="modal-body">
+          <p class="lead">If you choose to cancel your account, all of your todo lists will be destroyed.</p>
+          <p>We'll be sad to see you go but we want to make sure that we respect your privacy, so all of your account information will be deleted from our servers.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success btn-block" data-dismiss="modal">Meh, I'll stay</button>
+          <button type="button" class="btn btn-danger cancel btn-block">Yep... Cancel my account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

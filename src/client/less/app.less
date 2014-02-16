@@ -133,7 +133,8 @@ h1 { color: @brand-primary-dark; }
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm) {
+@media (max-width: @screen-sm) {
+  header.anonymous .title { display: block; h1 { text-align: left; } }
 }
 
 @media (min-width: @screen-md) {}
