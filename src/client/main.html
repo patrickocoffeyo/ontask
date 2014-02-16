@@ -7,8 +7,13 @@
   <header id="header" class="page-header">
     {{#if isLoggedIn}}
       <button class="btn btn-primary prev pull-left"><i class="fa fa-arrow-left"></i></button>
-      <div class="title"><h1>On Task</h1><small>{{date}}</small></div>
+
+      <div class="title"><h1>On Task</h1>
+        <div class="datetimepicker"><span><small><i class="fa fa-calendar"></i> {{date}}</small></span></div>
+      </div>
+
       <button class="btn btn-primary next pull-right"><i class="fa fa-arrow-right"></i></button>
+
     {{else}}
       <div class="title"><h1>On Task</h1></div>
       {{ loginButtons }}
@@ -21,7 +26,6 @@
     <ul class="nav nav-pills nav-justified" id="nav-main">
       <li><a href="{{pathFor 'dashboard'}}" class="task-list {{activeIf 'dashboard'}}"><i class="fa fa-list"></i> Tasks</a></li>
       <li><a href="{{pathFor 'addTask'}}" class="add-task {{activeIf 'addTask'}}"><i class="fa fa-plus"></i> Add</a></li>
-      <li><a href="#" class="view-calendar {{activeIf 'viewCalendar'}}"><i class="fa fa-calendar"></i> Calendar</a></li>
       <li><a href="#" class="view-account {{activeIf 'viewAccount'}}"><i class="fa fa-user"></i> Account</a></li>
     </ul>
   {{/if}}

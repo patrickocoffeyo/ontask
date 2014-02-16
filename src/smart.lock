@@ -10,7 +10,8 @@
       "roles": {},
       "collection-helpers": {},
       "font-awesome-4-less": {},
-      "accounts-ui-bootstrap-3": {}
+      "accounts-ui-bootstrap-3": {},
+      "bootstrap3-datetimepicker": {}
     },
     "packages": {
       "iron-router": {
@@ -57,6 +58,11 @@
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
         "tag": "v0.2.4",
         "commit": "cdbd20eb065310c0cc302bbd5f22e5b2121c769a"
+      },
+      "bootstrap3-datetimepicker": {
+        "git": "https://github.com/tsega/meteor-bootstrap3-datetimepicker.git",
+        "tag": "v0.0.5",
+        "commit": "30b5fa0759f98b75761772ad891876408f7cc8c4"
       },
       "simple-schema": {
         "git": "https://github.com/aldeed/meteor-simple-schema.git",
