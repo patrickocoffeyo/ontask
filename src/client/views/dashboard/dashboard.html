@@ -1,5 +1,12 @@
 <template name="dashboard">
-  {{#each tasks}}
-
-  {{/each}}
+  <table class="table table-striped" id="taskList">
+    <tbody>
+      {{#each tasks}}
+      <tr data-id="{{_id}}">
+          <td class="title">{{title}}</td>
+          <td><i class="fa fa-trash-o"></i></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </template>

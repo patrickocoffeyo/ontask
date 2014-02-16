@@ -1,21 +1,11 @@
 <template name="taskForm">
-  <div id="task-form">
-    <form>
-      <input type="text" class="form-control" placeholder="Task Name" name="tastTitle"/>
-      <select name="day" class="form-control">
-        <option value="today" selected>Today</option>
-        <option value="{{dateAdd 1}}">{{dateAdd 1}}</option>
-        <option value="{{dateAdd 2}}">{{dateAdd 2}}</option>
-        <option value="{{dateAdd 3}}">{{dateAdd 3}}</option>
-        <option value="{{dateAdd 4}}">{{dateAdd 4}}</option>
-        <option value="{{dateAdd 5}}">{{dateAdd 5}}</option>
-        <option value="{{dateAdd 6}}">{{dateAdd 6}}</option>
-        <option value="{{dateAdd 7}}">{{dateAdd 7}}</option>
-      </select>
+  {{#autoForm schema=tasksSchema id="taskForm" doc=task validation="submit"}}
+    {{afQuickField 'title' placeholder="Task Name"}}
       <div class="btn-group">
-        <button class="btn btn-danger"><i class="fa fa-times-circle-o"></i></button>
-        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i></button>
+        <a class="btn btn-danger"><i class="fa fa-times-circle-o"></i></a>
+        <button type="submit" class="btn btn-success {{#if isUpdate}}update{{else}}insert{{/if}}">
+          {{#if isUpdate}}<i class="fa fa-save"></i>{{else}}<i class="fa fa-plus"></i>{{/if}}
+        </button>
       </div>
-    </form>
-  </div>
+  {{/autoForm}}
 </template>

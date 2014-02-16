@@ -3,12 +3,21 @@ this.Tasks = new Meteor.Collection2 'tasks',
     title:
       type: String
       label: "Title"
+    user:
+      type: String
+      label: "User ID"
     date:
       type: Date
       label: "Date"
     delta:
       type: Number
       label: "Delta"
+      optional: true,
+    status:
+      type: Number
+      label: "Status"
   transform: (task)->
-    task.dateFormatted = moment(task.date).format('MMMM DD, YYYY')
+    if Meteor.isClient
+      task.dateFormatted = moment(task.date).format('MMMM DD, YYYY')
+      task.userObject = Meteor.users.findOne { _id: task.user }
     return task

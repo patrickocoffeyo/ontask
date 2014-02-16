@@ -1,13 +1,18 @@
 Meteor.startup ->
   Tasks.allow
-    insert: (userId, order)-> true
-    update: (userId, order)-> true
-    remove: (userId, order)-> true
+    insert: (userId, task)-> userId?
+    update: (userId, task)-> if task.user is userId then true else false
+    remove: (userId, task)-> if task.user is userId then true else false
 
 Meteor.publish 'tasks-day', (date)->
-  start = end = date
+  start = new Date(date)
+  end = new Date(date)
 
-  start.setHours 0,0,0,0
-  end.setHours 23,59,59,999
+  start.setDate(end.getDate() - 1)
+  end.setDate(end.getDate() + 1)
 
-  Tasks.find { date: { $gte: start, $lt: end } }
+  start.setHours 23,59,59,999
+  end.setHours 0,0,1,0
+  console.log start.toISOString(), end.toISOString()
+  console.log start, end
+  Tasks.find { user: this.userId, date: { $gte: start, $lt: end }, status: 1 }

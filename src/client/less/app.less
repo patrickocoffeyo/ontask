@@ -51,16 +51,18 @@ h1 { color: @brand-primary-dark; }
 
   #login-dropdown-list {
     list-style: none;
-    background-color: @brand-primary-dark;
     position: absolute;
     right: 0; top: 0;
-    display: block;
-    line-height: 47px;
-    padding: 0 16px;
 
     a.dropdown-toggle {
       color: #fff;
+      background-color: #15987e;
+      display: block;
+      line-height: 47px;
+      padding: 0 16px;
+      text-decoration: none;
     }
+    &.open a.dropdown-toggle { background-color: @brand-primary-dark; }
   }
 }
 
@@ -92,7 +94,8 @@ h1 { color: @brand-primary-dark; }
 /* ==========================================================================
    Templates
    ========================================================================== */
-#task-form {
+#taskForm {
+  label { display: none; }
   input, select  {
     width: 100%;
     .box-sizing(border-box);
@@ -100,9 +103,18 @@ h1 { color: @brand-primary-dark; }
   }
   .btn-group {
     width: 100%;
-    button { width: 50%; }
+    button, a { width: 50%; }
   }
-  
+}
+
+
+#taskList {
+  td { vertical-align: middle; }
+  td.title {
+    font-size: 150%;
+  }
+
+  i.fa.fa-trash-o { color: @brand-danger; }
 }
 
 /* ==========================================================================

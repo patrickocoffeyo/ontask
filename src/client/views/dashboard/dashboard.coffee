@@ -5,8 +5,8 @@ Router.map ->
   this.route 'dashboard',
     path: '/'
     template: 'dashboard'
-    waitOn: channel = Meteor.subscribe 'tasks-day', Session.get 'viewDate'
-    unload: do channel.stop
+    waitOn: -> channel = Meteor.subscribe 'tasks-day', Session.get 'viewDate'
+    unload: -> do channel.stop
     data:
       tasks: -> Tasks.find()
 
