@@ -1,11 +1,10 @@
 <template name="taskForm">
   {{#autoForm schema=tasksSchema id="taskForm" doc=task validation="submit"}}
     {{afQuickField 'title' placeholder="Task Name"}}
-      <div class="btn-group">
-        <a class="btn btn-danger"><i class="fa fa-times-circle-o"></i></a>
-        <button type="submit" class="btn btn-success {{#if isUpdate}}update{{else}}insert{{/if}}">
-          {{#if isUpdate}}<i class="fa fa-save"></i>{{else}}<i class="fa fa-plus"></i>{{/if}}
-        </button>
-      </div>
+
+    <input type="text" class="form-control" value="{{viewDateFormatted}}" disabled/>
+    <button type="submit" class="btn btn-success {{#if isUpdate}}update{{else}}insert{{/if}}">
+      {{#if isUpdate}}<i class="fa fa-save"></i>{{else}}<i class="fa fa-plus"></i>{{/if}}
+    </button>
   {{/autoForm}}
 </template>

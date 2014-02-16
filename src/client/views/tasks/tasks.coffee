@@ -12,6 +12,6 @@ tasksSchema.hooks
   formToDoc: (doc)->
     doc.user = Meteor.userId()
     doc.date = Session.get 'viewDate'
-    doc.status = 1
+    doc.completed = false
     return doc
 Template.taskForm.tasksSchema = tasksSchema

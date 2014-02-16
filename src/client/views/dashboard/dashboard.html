@@ -1,10 +1,11 @@
 <template name="dashboard">
-  <table class="table table-striped" id="taskList">
+  <table class="table" id="taskList">
     <tbody>
       {{#each tasks}}
-      <tr data-id="{{_id}}">
+      <tr data-id="{{_id}}" class="{{#if completed}}success{{/if}}">
+        <td class="check"><i class="fa checkbox {{#if completed}}fa-check-square-o{{else}}fa-square-o{{/if}}"></i></td>
           <td class="title">{{title}}</td>
-          <td><i class="fa fa-trash-o"></i></td>
+          <td class="delete"><i class="fa fa-trash-o"></i></td>
         </tr>
       {{/each}}
     </tbody>

@@ -15,4 +15,4 @@ Meteor.publish 'tasks-day', (date)->
   end.setHours 0,0,1,0
   console.log start.toISOString(), end.toISOString()
   console.log start, end
-  Tasks.find { user: this.userId, date: { $gte: start, $lt: end }, status: 1 }
+  Tasks.find { user: this.userId, date: { $gte: start, $lt: end } }

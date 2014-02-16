@@ -13,9 +13,9 @@ this.Tasks = new Meteor.Collection2 'tasks',
       type: Number
       label: "Delta"
       optional: true,
-    status:
-      type: Number
-      label: "Status"
+    completed:
+      type: Boolean
+      label: "Completed"
   transform: (task)->
     if Meteor.isClient
       task.dateFormatted = moment(task.date).format('MMMM DD, YYYY')
