@@ -14,4 +14,6 @@ tasksSchema.hooks
     doc.date = Session.get 'viewDate'
     doc.completed = false
     return doc
+
 Template.taskForm.tasksSchema = tasksSchema
+Template.taskFormTable.tasksSchema = tasksSchema
