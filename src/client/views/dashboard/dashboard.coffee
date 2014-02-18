@@ -7,7 +7,8 @@ Router.map ->
     waitOn: -> channel = Meteor.subscribe 'tasks-day', Session.get 'viewDate'
     unload: -> do channel.stop
     data:
-      tasks: -> Tasks.find()
+      tasks: -> _.sortBy Tasks.find().fetch(), (a, b)-> if a.completed == true then return 1 else return -1
+
 
 Template.dashboard.events
   'click .check i': (event, template)->
