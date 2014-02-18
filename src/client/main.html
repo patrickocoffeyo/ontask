@@ -41,7 +41,6 @@
   {{#if isLoggedIn}}
     <ul class="nav nav-pills nav-justified" id="nav-main">
       <li><a href="{{pathFor 'dashboard'}}" class="task-list {{activeIf 'dashboard'}}"><i class="fa fa-list"></i> Tasks</a></li>
-      <li><a href="{{pathFor 'addTask'}}" class="add-task {{activeIf 'addTask'}}"><i class="fa fa-plus"></i> Add</a></li>
       <li><a href="{{pathFor 'account'}}" class="view-account {{activeIf 'account'}}"><i class="fa fa-user"></i> Account</a></li>
     </ul>
   {{/if}}

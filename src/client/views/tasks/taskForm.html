@@ -12,7 +12,7 @@
 <template name="taskFormTable">
   {{#autoForm schema=tasksSchema id="taskForm" doc=task validation="submit"}}
     <div class="row">
-      <div class="col-sm-9">{{afQuickField 'title' placeholder="Task Name"}}</div>
+      <div class="col-sm-9">{{afQuickField 'title' placeholder="Add a Task..."}}</div>
       <div class="col-sm-3">
         <button type="submit" class="btn btn-success {{#if isUpdate}}update{{else}}insert{{/if}}">
           {{#if isUpdate}}<i class="fa fa-save"></i>{{else}}<i class="fa fa-plus"></i>{{/if}}

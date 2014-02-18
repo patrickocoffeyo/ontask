@@ -1,4 +1,7 @@
 <template name="dashboard">
+  {{#unless tasks}}
+    <p class="lead">To get started, create some tasks.</p>
+  {{/unless}}
   <table class="table" id="taskList">
     <tbody>
       {{#each tasks}}
