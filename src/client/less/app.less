@@ -123,7 +123,12 @@ h1 { color: @brand-primary-dark; }
     vertical-align: middle;
     font-size: 150%;
 
-    &.check, &.delete { width: 50px; text-align: center; }
+    &.check, &.delete {
+      width: 20px;
+      padding: 0;
+      text-align: center;
+      i { margin: 0 10px 0 2px; padding: 0;}
+    }
     i { cursor: pointer; }
     i.fa.fa-trash-o { color: @brand-danger; }
     i.fa.fa-check-square-o { color: @brand-primary-dark; }
@@ -142,9 +147,11 @@ h1 { color: @brand-primary-dark; }
 
 @media (max-width: @screen-sm) {
   header.anonymous .title { display: block; h1 { text-align: left; } }
-
-  #taskList { i.fa.fa-square-o { font-size: 200%; } }
-
+  #taskList {
+    td {
+      i.fa.fa-square-o { font-size: 200%; margin-top: 3px; }
+    }
+  }
 }
 
 @media (min-width: @screen-md) {}
